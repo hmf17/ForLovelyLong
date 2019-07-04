@@ -3,76 +3,139 @@
 
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../asserts/style/mystyle.css" />
-    <title>龙小凤の个人主页</title>
+    <link rel="stylesheet" href="asserts/style/mystyle.css" />
+    <title>给亲爱的龙龙</title>
 </head>
 
 <body>
-    <header style="background-image: url(https://call22.github.io/assets/img/saboutme.jpg); background-size: 100% 100%; ">
+    <header style="background-image: url(asserts/img/sbg.jpg); background-size: 100% 100%; ">
         <nav>
             <ul class="navbar">
                 <li class="nav-item">
-                    <a href="../../index.html">主页</a>
+                    <a href="index.html">主页</a>
                 </li>
                 <li class="nav-item">
-                    <a href="">关于我</a>
+                    <a href="longlong.html">关于龙小凤同学</a>
                 </li>
                 <li class="nav-item">
-                    <a href="../catalog/blogs.html">往期回顾</a>
+                    <a href="pages/catalog/blogs.html">往期回顾</a>
                 </li>
                 <li class="nav-item">
-                    <a href="../time-review/time-track.html">足迹</a>
+                    <a href="pages/time-review/time-track.html">足迹</a>
                 </li>
             </ul>
         </nav>
         <div class="site-heading">
-            <h1>About Me</h1>
-            <p class="subintro">——但行好事，莫问前程</p>
+            <h1>Smile Long</h1>
+            <span class="subheading">给亲爱的龙龙</span>
+            <p class="subintro">——感谢有你</p>
         </div>
     </header>
     <main>
         <div class="blog-preview">
-            <div class="head-img"></div>
-            <h2 id="my-name">龙玉凤</h2>
-            <ul class="my-info">
-                <li class="my-info-item">
-                    <p>出生日期: 20世纪的尾巴</p>
-                </li>
-                <li class="my-info-item">
-                    <p>苗族</p>
-                </li>
-                <li class="my-info-item">
-                    <p>湖南</p>
-                </li>
-                <li class="my-info-item">
-                    <p>邮箱：longyf17@mails.tsinghua.edu.cn</p>
-                </li>
-            </ul>
-            <h2 id="my-exper">我的经历</h2>
-            <ul class="my-info">
-                <li class="my-info-item">
-                    <p>清华大学软件学院(2017-至今)</p>
-                </li>
-                <li class="my-info-item">
-                    <p>湖南某个乡旮旯</p>
+            <a href="asserts/img/微信图片_20190704212524.jpg">
+                <h2 class="blog-title">点点这个看看龙小凤同学的美照（别打我呀）</h2>
+            </a>
+            <p class="blog-meta">创作于2019年7月4号</p>
+            <article>
+                <p>
+                    绘画师龙小凤同学将她的绘画笔给了梦凡同学，他也就照着之前的样子画了一个，但是在这拙略的画笔中，也是梦凡对于龙龙的满满喜爱呀！
+                </p>
+            </article>
+            <hr />
+            <ul class="wholeblog">
+                <li>
+                    <a href="https://call22.github.io/assets/blog/my-first-blog.html"> 让我们看看看龙小风同学的真迹啦 &rarr;</a>
                 </li>
             </ul>
-            <h2 id="my-exper">自我介绍</h2>
-            <p>
-                一个在程序员路上越走越远的人。虽路途遥远,技不如人，我仍想做一个让自己喜欢的人，认真踏实，快乐就好。
-            </p>
         </div>
     </main>
     <footer>
         <ul class="list-inline">
             <li class="list-inline-item">
-                <a href="http://www.4399.com/" target="blank">
+                <a href="www.4399.com" target="blank">
                     <span>龙龙的最爱</span>
                 </a>
             </li>
         </ul>
-        <p class="copyright">Copyright © 2019 龙玉凤</p>
+        <p class="copyright">Copyright © 2019 龙玉凤&贺梦凡</p>
     </footer>
+
+    <script>
+        //画心心
+        (function(window, document, undefined) {
+            var hearts = [];
+            window.requestAnimationFrame = (function() {
+                return window.requestAnimationFrame ||
+                    window.webkitRequestAnimationFrame ||
+                    window.mozRequestAnimationFrame ||
+                    window.oRequestAnimationFrame ||
+                    window.msRequestAnimationFrame ||
+                    function(callback) {
+                        setTimeout(callback, 1000 / 60);
+                    }
+            })();
+            init();
+
+            function init() {
+                css(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;}.heart:after{top: -5px;}.heart:before{left: -5px;}");
+                attachEvent();
+                gameloop();
+            }
+
+            function gameloop() {
+                for (var i = 0; i < hearts.length; i++) {
+                    if (hearts[i].alpha <= 0) {
+                        document.body.removeChild(hearts[i].el);
+                        hearts.splice(i, 1);
+                        continue;
+                    }
+                    hearts[i].y--;
+                    hearts[i].scale += 0.004;
+                    hearts[i].alpha -= 0.013;
+                    hearts[i].el.style.cssText = "left:" + hearts[i].x + "px;top:" + hearts[i].y + "px;opacity:" + hearts[i].alpha + ";transform:scale(" + hearts[i].scale + "," + hearts[i].scale + ") rotate(45deg);background:" + hearts[i].color;
+                }
+                requestAnimationFrame(gameloop);
+            }
+
+            function attachEvent() {
+                var old = typeof window.onclick === "function" && window.onclick;
+                window.onclick = function(event) {
+                    old && old();
+                    createHeart(event);
+                }
+            }
+
+            function createHeart(event) {
+                var d = document.createElement("div");
+                d.className = "heart";
+                hearts.push({
+                    el: d,
+                    x: event.clientX - 5,
+                    y: event.clientY - 5,
+                    scale: 1,
+                    alpha: 1,
+                    color: randomColor()
+                });
+                document.body.appendChild(d);
+            }
+
+            function css(css) {
+                var style = document.createElement("style");
+                style.type = "text/css";
+                try {
+                    style.appendChild(document.createTextNode(css));
+                } catch (ex) {
+                    style.styleSheet.cssText = css;
+                }
+                document.getElementsByTagName('head')[0].appendChild(style);
+            }
+
+            function randomColor() {
+                return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + ")";
+            }
+        })(window, document);
+    </script>
 </body>
 
 </html>
