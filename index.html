@@ -3,136 +3,138 @@
 
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../assets/style/mystyle.css" />
-    <title>个人主页for亲爱的龙龙</title>
+    <link rel="stylesheet" href="assets/style/mystyle.css" />
+    <title>给亲爱的龙龙</title>
 </head>
 
 <body>
-    <header style="background-image: url(https://call22.github.io/assets/img/sbg.jpg); background-size: 100% 100%; ">
+    <header style="background-image: url(assets/img/sbg.jpg); background-size: 100% 100%; ">
         <nav>
             <ul class="navbar">
                 <li class="nav-item">
-                    <a href="../../index.html">主页</a>
+                    <a href="index.html">主页</a>
                 </li>
                 <li class="nav-item">
-                    <a href="../about/longlong.html">关于我</a
-            >
-          </li>
-          <li class="nav-item">
-            <a href="../catalog/blogs.html"
-              >往期回顾</a
-            >
-          </li>
-          <li class="nav-item">
-            <a href="../time-review/time-track.html"
-              >足迹</a
-            >
-          </li>
-        </ul>
-      </nav>
-      <div class="site-heading">
-        <h1>Catalog</h1>
-        <p class="subintro">——敝帚自珍</p>
-      </div>
+                    <a href="pages/about/longlong.html">关于我</a>
+                </li>
+                <li class="nav-item">
+                    <a href="pages/catalog/blogs.html">往期回顾</a>
+                </li>
+                <li class="nav-item">
+                    <a href="pages/time-review/time-track.html">足迹</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="site-heading">
+            <h1>Focus</h1>
+            <span class="subheading">龙小凤の个人主页</span>
+            <p class="subintro">——但行好事，莫问前程</p>
+        </div>
     </header>
     <main>
         <div class="blog-preview">
-          <a href="../../assets/blog/my-first-blog.html">
-            <h2 class="blog-title">web入门</h2>
-          </a>
-                    <p class="blog-meta">创作于2019年7月2日</p>
-                    <article>
-                        <p>
-                            web入门,从徒手写网页开始。其实html，css和js挺有意思的，明明语法就几个，却能创作出众多炫酷界面，就像绘画只有纸笔和颜料，却能做出惊世之作。 写自己的主页，就感觉自己是个绘画师，创造着自己的世界……
-                        </p>
-                    </article>
-                    <hr />
-                    </main>
-                    <footer>
-                        <ul class="list-inline">
-                            <li class="list-inline-item">
-                                <a href="https://github.com/call22" target="blank">
-                                    <span>Github</span>
-                                </a>
-                            </li>
-                        </ul>
-                        <p class="copyright">Copyright © 2019 龙玉凤</p>
-                    </footer>
-                    <script>
-                        //鼠标点击出现爱心特效
-                        (function(window, document, undefined) {
-                            var hearts = [];
-                            window.requestAnimationFrame = (function() {
-                                return window.requestAnimationFrame ||
-                                    window.webkitRequestAnimationFrame ||
-                                    window.mozRequestAnimationFrame ||
-                                    window.oRequestAnimationFrame ||
-                                    window.msRequestAnimationFrame ||
-                                    function(callback) {
-                                        setTimeout(callback, 1000 / 60);
-                                    }
-                            })();
-                            init();
+            <a href="assets/blog/my-first-blog.html">
+                <h2 class="blog-title">web入门</h2>
+            </a>
+            <p class="blog-meta">创作于2019年7月2日</p>
+            <article>
+                <p>
+                    web入门,从徒手写网页开始。其实html，css和js挺有意思的，明明语法就几个，却能创作出众多炫酷界面，就像绘画只有纸笔和颜料，却能做出惊世之作。 写自己的主页，就感觉自己是个绘画师，创造着自己的世界。
+                </p>
+            </article>
+            <hr />
+            <ul class="wholeblog">
+                <li>
+                    <a href="pages/catalog/blogs.html"> 查看全部 &rarr;</a>
+                </li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <ul class="list-inline">
+            <li class="list-inline-item">
+                <a href="https://github.com/hmf17" target="blank">
+                    <span>Github</span>
+                </a>
+            </li>
+        </ul>
+        <p class="copyright">Copyright © 2019 龙玉凤</p>
+    </footer>
+    <script>
+        //鼠标点击出现爱心特效
+        (function(window, document, undefined) {
+            var hearts = [];
+            window.requestAnimationFrame = (function() {
+                return window.requestAnimationFrame ||
+                    window.webkitRequestAnimationFrame ||
+                    window.mozRequestAnimationFrame ||
+                    window.oRequestAnimationFrame ||
+                    window.msRequestAnimationFrame ||
+                    function(callback) {
+                        setTimeout(callback, 1000 / 60);
+                    }
+            })();
+            init();
 
-                            function init() {
-                                css(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;}.heart:after{top: -5px;}.heart:before{left: -5px;}");
-                                attachEvent();
-                                gameloop();
-                            }
+            function init() {
+                css(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;}.heart:after{top: -5px;}.heart:before{left: -5px;}");
+                attachEvent();
+                gameloop();
+            }
 
-                            function gameloop() {
-                                for (var i = 0; i < hearts.length; i++) {
-                                    if (hearts[i].alpha <= 0) {
-                                        document.body.removeChild(hearts[i].el);
-                                        hearts.splice(i, 1);
-                                        continue;
-                                    }
-                                    hearts[i].y--;
-                                    hearts[i].scale += 0.004;
-                                    hearts[i].alpha -= 0.013;
-                                    hearts[i].el.style.cssText = "left:" + hearts[i].x + "px;top:" + hearts[i].y + "px;opacity:" + hearts[i].alpha + ";transform:scale(" + hearts[i].scale + "," + hearts[i].scale + ") rotate(45deg);background:" + hearts[i].color;
-                                }
-                                requestAnimationFrame(gameloop);
-                            }
+            function gameloop() {
+                for (var i = 0; i < hearts.length; i++) {
+                    if (hearts[i].alpha <= 0) {
+                        document.body.removeChild(hearts[i].el);
+                        hearts.splice(i, 1);
+                        continue;
+                    }
+                    hearts[i].y--;
+                    hearts[i].scale += 0.004;
+                    hearts[i].alpha -= 0.013;
+                    hearts[i].el.style.cssText = "left:" + hearts[i].x + "px;top:" + hearts[i].y + "px;opacity:" + hearts[i].alpha + ";transform:scale(" + hearts[i].scale + "," + hearts[i].scale + ") rotate(45deg);background:" + hearts[i].color;
+                }
+                requestAnimationFrame(gameloop);
+            }
 
-                            function attachEvent() {
-                                var old = typeof window.onclick === "function" && window.onclick;
-                                window.onclick = function(event) {
-                                    old && old();
-                                    createHeart(event);
-                                }
-                            }
+            function attachEvent() {
+                var old = typeof window.onclick === "function" && window.onclick;
+                window.onclick = function(event) {
+                    old && old();
+                    createHeart(event);
+                }
+            }
 
-                            function createHeart(event) {
-                                var d = document.createElement("div");
-                                d.className = "heart";
-                                hearts.push({
-                                    el: d,
-                                    x: event.clientX - 5,
-                                    y: event.clientY - 5,
-                                    scale: 1,
-                                    alpha: 1,
-                                    color: randomColor()
-                                });
-                                document.body.appendChild(d);
-                            }
+            function createHeart(event) {
+                var d = document.createElement("div");
+                d.className = "heart";
+                hearts.push({
+                    el: d,
+                    x: event.clientX - 5,
+                    y: event.clientY - 5,
+                    scale: 1,
+                    alpha: 1,
+                    color: randomColor()
+                });
+                document.body.appendChild(d);
+            }
 
-                            function css(css) {
-                                var style = document.createElement("style");
-                                style.type = "text/css";
-                                try {
-                                    style.appendChild(document.createTextNode(css));
-                                } catch (ex) {
-                                    style.styleSheet.cssText = css;
-                                }
-                                document.getElementsByTagName('head')[0].appendChild(style);
-                            }
+            function css(css) {
+                var style = document.createElement("style");
+                style.type = "text/css";
+                try {
+                    style.appendChild(document.createTextNode(css));
+                } catch (ex) {
+                    style.styleSheet.cssText = css;
+                }
+                document.getElementsByTagName('head')[0].appendChild(style);
+            }
 
-                            function randomColor() {
-                                return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + ")";
-                            }
-                        })(window, document);
-                    </script>
+            function randomColor() {
+                return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + ")";
+            }
+        })(window, document);
+    </script>
 </body>
 
 </html>
